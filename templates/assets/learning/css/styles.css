@@ -1,0 +1,214 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: interfaceregular,Arial,sans-serif;
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  main, .container, .login-wrapper {
+    height: 100%;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #5F6163;
+    text-align: center;
+    font-family: interfaceregular,Arial,sans-serif;
+    margin: 0 0 20px 0;
+  }
+  h2 {
+    color: white;
+    font-size: 28px;
+    line-height: 42px;
+    font-weight: 700;
+    max-width: 460px;
+    margin: 100px 0 0 0;
+    font-family: interfaceregular,Arial,sans-serif;
+  }
+  a {
+   color: #2A6EBB;
+   text-decoration: none;
+   font-family: interfaceregular,Arial,sans-serif;
+   margin: 20px 0;
+   display: block;
+  }
+  .learning-logo {
+    margin-top: 40px;
+    width: 237px;
+  }
+  hr {
+   border: 1px solid #F2F2F2;
+  }
+  p {
+   color: #5F6163;
+   font-size: 14px;
+   line-height: 21px;
+   margin: 20px 0;
+   font-family: interfaceregular,Arial,sans-serif;
+  }
+  /* PRIMARY BUTTON STYLES */
+  
+  .base-button {
+    background-color: #7e5ec4;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    min-width: 285px;
+    padding: 15px 20px;
+    transition: background-color .25s cubic-bezier(.4,0,.2,1) 0ms,box-shadow .25s cubic-bezier(.4,0,.2,1) 0ms,border .25s cubic-bezier(.4,0,.2,1) 0ms;
+    margin: 0 auto 40px; 
+   }
+  .base-button:hover {
+    background-color: #9378ce;
+  }
+   /* SECONDARY BUTTON STYLES */
+   .secondary-button {
+    background-color: #E7E1F4;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    color: #684DA1;
+   }
+  .secondary-button:hover {
+      background-color: #dbd3ee;
+      box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  }
+  
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+  
+  
+  .logo-signup-container{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  width: 100%;
+  }
+  
+  .login-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+   
+   @media only screen and (min-width: 768px) {
+     .login-wrapper {
+       -webkit-box-orient: horizontal;
+       -webkit-box-direction: normal;
+           -ms-flex-direction: row;
+               flex-direction: row;
+       -webkit-column-gap: 50px;
+               column-gap: 50px;
+     }
+   }
+   
+   .col-1 {
+     width: 60%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin: 0 0 0 50px;
+   }
+   
+   @media only screen and (max-width: 768px) {
+     .col-1 {
+       width: auto;
+     }
+     .col-2 {
+       width: auto;
+     }
+     .login-form__intro {
+       margin: 1rem 0;
+     }
+   }
+   
+   .col-2 {
+     width: 40%;
+     background-color: #15375E;
+     padding: 0 50px;
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+   }
+   
+   .col-2 img {
+     margin-top: 130px;
+     width: 100%;
+     height: auto;
+   }
+  
+   .learning-login-form input {
+     border: 1px solid #cccdcd;
+     border-radius: 3px;
+     font-size: 1rem;
+     padding: 22px 5px 3px 10px;
+     margin-bottom: 20px;
+     width: -webkit-fill-available;
+     width: -moz-available;
+     outline: none;
+   }
+   
+   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     .learning-login-form input {
+       width: 100%;
+     }
+   }
+   
+   .learning-login-form input:focus {
+     border: 2px solid #2a6ebb !important;
+   }
+   
+   .learning-login-form input:hover {
+     -webkit-box-shadow: 0 2px 0 #cccdcd;
+             box-shadow: 0 2px 0 #cccdcd;
+   }
+   
+   .learning-login-form span {
+     cursor: pointer;
+     float: right;
+     position: relative;
+     top: -50px;
+     right: 10px;
+   }
+  
+   
+   .error {
+    border: 1px solid #CB2331;
+    padding: 15px;
+    width: fit-content;
+    display: block;
+    margin: 0 0 20px 0;
+    color: #CB2331;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+   }
+   .visibility-hidden-form {
+     position: absolute;
+     position: absolute !important;
+     width: 1px !important;
+     height: 1px !important;
+     padding: 0 !important;
+     margin: -1px !important;
+     overflow: hidden !important;
+     clip: rect(0, 0, 0, 0) !important;
+     white-space: nowrap !important;
+     border: 0 !important;
+   } 
+   .container {
+     margin-left: auto;
+     margin-right: auto;
+     width: 100%;
+   }
