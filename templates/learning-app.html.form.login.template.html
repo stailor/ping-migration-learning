@@ -83,7 +83,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     <!-- $templateMessages.getMessage($messageKeyPrefix, "usernameTitle") -->
                                     Email address
                                 </label>
-				                <input type="email" name="$name" value="$username" id="email" class=" email" required>			                
+				                <input type="email" name="$name" value=""
+								id="email" class=" email" required>			        
+								<!-- value="$username"  -->
+								        
 				            </div>
 				
 				            <div class="form-field">
@@ -102,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				
 				            <!-- #if($supportsPasswordReset) -->
 				            <input type="hidden" name="$passwordReset" value=""/>
-				            <a class="bp-login__forgotPass" onclick="postForgotPassword();">
+				            <a class="forgot-pass" onclick="postForgotPassword();">
                                 <!-- $templateMessages.getMessage($messageKeyPrefix, "forgotPassword") -->
                                 Forgot your password?
                             </a>
@@ -136,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     	  </div>	    
 	</main>
 
-    <script src="assets/learning/scripts/login.js"></script>
+    <script src="assets/learning/js/login.js"></script>
 	<script>
 	    function postForgotPassword() {
 	        document.forms[0]['$passwordReset'].value = 'clicked';
