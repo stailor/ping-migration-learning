@@ -1,36 +1,39 @@
-var formFields = document.querySelectorAll("input");
+var formFields = document.querySelectorAll('input');
 
 for (i = 0; i < formFields.length; i++) {
-  formFields[i].addEventListener("focus", function () {
-    this.previousElementSibling.classList.add("focus");
+  formFields[i].addEventListener('focus', function () {
+    this.previousElementSibling.classList.add('focus');
   });
 }
 
 for (i = 0; i < formFields.length; i++) {
-  formFields[i].addEventListener("keyup", function () {
+  formFields[i].addEventListener('keyup', function () {
     if (this.value.length >= 1) {
-      this.previousElementSibling.classList.add("focus");
+      this.previousElementSibling.classList.add('focus');
     } else {
-      this.previousElementSibling.classList.remove("focus");
+      this.previousElementSibling.classList.remove('focus');
     }
   });
 }
 
 // Form validation
-var loginForm = document.querySelector("#signIn");
-var emailEl = document.querySelector("#email");
-var passwordEl = document.querySelector("#password");
-var errorIcon = document.getElementById("#error-icon");
+var loginForm = document.querySelector('#signIn');
+var emailEl = document.querySelector('#email');
+var passwordEl = document.querySelector('#password');
+var errorIcon = document.getElementById('#error-icon');
 
 var validateEmail = function validateEmail() {
   var valid = false;
   var email = emailEl.value.trim();
   if (!isRequired(email)) {
-    showError(emailEl, "Email cannot be blank.");
+    showError(
+      emailEl,
+      'Email cannot be blank. Please enter a valid email address'
+    );
   } else if (!isEmailValid(email)) {
-    showError(emailEl, "Email is not valid.");
+    showError(emailEl, 'Please enter a valid email address');
   } else {
-    showSuccess(emailEl, "");
+    showSuccess(emailEl, '');
     valid = true;
   }
   return valid;
@@ -40,9 +43,9 @@ var validatePassword = function validatePassword() {
   var valid = false;
   var password = passwordEl.value.trim();
   if (!isRequired(password)) {
-    showError(passwordEl, "Password cannot be blank.");
+    showError(passwordEl, 'Password cannot be blank.');
   } else {
-    showSuccess(passwordEl, "");
+    showSuccess(passwordEl, '');
     valid = true;
   }
   return valid;
@@ -62,27 +65,27 @@ var isPasswordValidated = function isPasswordValidated(password) {
 };
 
 var isRequired = function isRequired(value) {
-  return value === "" ? false : true;
+  return value === '' ? false : true;
 };
 
 var showError = function showError(input, message) {
   var formField = input.parentElement;
-  formField.classList.add("error");
+  formField.classList.add('error');
 
-  var error = formField.querySelector("small");
-  var input = formField.querySelector("input");
+  var error = formField.querySelector('small');
+  var input = formField.querySelector('input');
 
   error.textContent = message;
 
-  if (formField.classList.contains("error")) {
-    error.classList.add("error-icon");
-    input.classList.add("error-input");
+  if (formField.classList.contains('error')) {
+    error.classList.add('error-icon');
+    input.classList.add('error-input');
   }
 
-  const accessValidation = document.getElementById("accessValidation");
+  const accessValidation = document.getElementById('accessValidation');
 
   const fragment = document.createDocumentFragment();
-  const li = fragment.appendChild(document.createElement("li"));
+  const li = fragment.appendChild(document.createElement('li'));
   li.innerHTML = message;
 
   accessValidation.appendChild(fragment);
@@ -90,22 +93,22 @@ var showError = function showError(input, message) {
 
 var showSuccess = function showSuccess(input) {
   var formField = input.parentElement;
-  formField.classList.remove("error");
-  var error = formField.querySelector("small");
-  var input = formField.querySelector("input");
+  formField.classList.remove('error');
+  var error = formField.querySelector('small');
+  var input = formField.querySelector('input');
 
-  error.textContent = "";
-  error.classList.remove("error-icon");
-  input.classList.remove("error-input");
+  error.textContent = '';
+  error.classList.remove('error-icon');
+  input.classList.remove('error-input');
 };
 
 if (loginForm) {
-  loginForm.addEventListener("submit", function (e) {
+  loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var accessValidation = document.getElementById("accessValidation");
+    var accessValidation = document.getElementById('accessValidation');
     if (accessValidation.childNodes.length > 0) {
-      accessValidation.innerHTML = "";
+      accessValidation.innerHTML = '';
     }
 
     var isEmailValid = validateEmail(),
@@ -113,33 +116,33 @@ if (loginForm) {
     var isFormValid = isEmailValid && isPasswordValid;
 
     if (isFormValid) {
-      document.getElementById("signIn").submit();
+      document.getElementById('signIn').submit();
     }
   });
 }
 
-var icon = document.querySelector(".visibility-icon");
-var inputPass = document.querySelector("#password");
+var icon = document.querySelector('.visibility-icon');
+var inputPass = document.querySelector('#password');
 
-icon.addEventListener("click", function () {
+icon.addEventListener('click', function () {
   visibilityIcon();
 });
 
 for (i = 0; i < iconBtn.length; i++) {
-  iconBtn[i].addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
+  iconBtn[i].addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
       visibilityIcon();
     }
   });
 }
 function visibilityIcon() {
-  if (inputPass.type === "password") {
-    icon.src = "assets/learning/img/visibility_on.svg";
-    icon.alt = "show password";
-    inputPass.type = "text";
+  if (inputPass.type === 'password') {
+    icon.src = 'assets/learning/img/visibility_on.svg';
+    icon.alt = 'show password';
+    inputPass.type = 'text';
   } else {
-    icon.src = "assets/learning/img/visibility_off.svg";
-    icon.alt = "hide password";
-    inputPass.type = "password";
+    icon.src = 'assets/learning/img/visibility_off.svg';
+    icon.alt = 'hide password';
+    inputPass.type = 'password';
   }
 }

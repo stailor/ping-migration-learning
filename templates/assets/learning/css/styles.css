@@ -9,8 +9,7 @@ body {
   font-family: interfaceregular, Arial, sans-serif;
 }
 main,
-.container,
-.login-wrapper {
+.container {
   height: 100%;
 }
 h1 {
@@ -105,13 +104,13 @@ button#iconBtn {
   margin-right: auto;
   width: 100%;
 }
-.container .col-1 .logo-signup-container {
+.container .col-1 section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-.container .col-1 .logo-signup-container {
+.container .col-1 section {
   p,
   a {
     display: inline-block;
@@ -136,17 +135,17 @@ button#iconBtn {
     width: auto;
     margin: 80px 20px 20px;
   }
-  .col-1 .logo-signup-container {
+  .col-1 section {
     flex-direction: column;
     margin: 0;
   }
-  .col-1 .logo-signup-container p {
+  .col-1 sectionp {
     margin: 0 0 30px 0;
   }
-  .col-1 .logo-signup-container p a {
+  .col-1 sectionp a {
     margin: 0;
   }
-  .col-1 .logo-signup-container img {
+  .col-1 sectionimg {
     margin: 0 0 30px 0;
   }
   .col-1 .base-button {
@@ -173,13 +172,13 @@ button#iconBtn {
   .col-1 {
     margin: 0 0 0 50px;
   }
-  .col-1 .logo-signup-container {
+  .col-1 section {
     margin: 40px 0 80px;
   }
-  .col-1 .logo-signup-container p a {
+  .col-1 sectionp a {
     margin: 0;
   }
-  .col-1 .logo-signup-container img {
+  .col-1 sectionimg {
     padding: 0 20px 0 0;
   }
 }
@@ -221,6 +220,14 @@ label {
   font-weight: 600;
   max-width: 391px;
 }
+.error-email {
+  color: #cb2331;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 25px;
+  display: block;
+}
 .visibility-hidden-form {
   position: absolute;
   position: absolute !important;
@@ -233,7 +240,7 @@ label {
   white-space: nowrap !important;
   border: 0 !important;
 }
-.login-wrapper {
+.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,7 +250,7 @@ label {
   flex-direction: column;
 }
 @media only screen and (min-width: 768px) {
-  .login-wrapper {
+  .container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -252,7 +259,7 @@ label {
     column-gap: 50px;
   }
 }
-.learning-login-form input {
+form input {
   border: 1px solid #f2f2f2;
   border-radius: 3px;
   height: 44px;
@@ -266,18 +273,18 @@ label {
   font-size: 16px;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .learning-login-form input {
+  form input {
     width: 100%;
   }
 }
-.learning-login-form input:focus {
+form input:focus {
   border: 2px solid #2a6ebb !important;
 }
-.learning-login-form input:hover {
+form input:hover {
   -webkit-box-shadow: 0 2px 0 #cccdcd;
   box-shadow: 0 2px 0 #cccdcd;
 }
-.learning-login-form span {
+form span {
   cursor: pointer;
   float: right;
   position: relative;

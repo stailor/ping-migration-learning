@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <!-- #*
 The server renders this HTML page in an end-user's browser when
 needed authentication credentials may be obtained via HTTP Basic
@@ -20,132 +19,150 @@ It is recommended to sanitize the values that are displayed using $escape.escape
 Change text or formatting as needed. Modifying Velocity statements
 is not recommended as it may interfere with expected server behavior.
 *# -->
-<!-- template name: bp-app.html.login.template.html -->
+<!-- template name: learning-app.html.login.template.html -->
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N6K7J6SM');</script>
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-N6K7J6SM');
+</script>
 <!-- End Google Tag Manager -->
-
 
 <!-- #set( $messageKeyPrefix = "bmj.learning.html.form.login.template." )
 #set($templateName = $HttpServletRequest.getParameter("template_name") ) -->
 <html lang="$pluginLocale.getLanguage()" dir="ltr">
-<head>
-	<title>$templateMessages.getMessage($messageKeyPrefix, "page.title")</title>	
-    <base href="$CurrentPingFedBaseURL"/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+  <head>
+    <title>$templateMessages.getMessage($messageKeyPrefix, "page.title")</title>
+    <base href="$CurrentPingFedBaseURL" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="assets/learning/css/styles.css" rel="stylesheet" />
-</head>
+  </head>
 
-<body>
-	<main>
-	    <div class="container">	    
-	        <div class="login-wrapper">
-                <div class="col-1">
-                    <section class="logo-signup-container">
-                        <img src="assets/learning/img/logo.svg" alt="BMJ Learning Logo" class="learning-logo" />
-                        <p>Don’t have an account? <a href="https://new-learning.bmj.com/sign-up">Sign up</a></p>
-                    </section>
-	        
-                    <h1>
-                        <!-- $templateMessages.getMessage($messageKeyPrefix, "title") -->
-                        Log in
-                    </h1>
-                    <!-- <p class="bp-login__desc">$templateMessages.getMessage($messageKeyPrefix, "unknown.desc")</p> -->
-					
-			        <form action="$url" method="post" class="learning-login-form" id="signIn">
-						<fieldset>
-				
-				            <div class="form-field">
-				            	<small id="error1"></small>
-				            	<!-- #if($authnMessageKey)
-					                #set($errorCode = $authnMessageKey)
-					            #end
-					            #if($errorMessageKey)
-					                #set($errorCode =  $errorMessageKey)
-					            #end
-					
-					            #if($errorCode)
-					             -->
-					            <div id="error-account-details">
-					                <small class="error incorrect-account-details">
-                                        <!-- $templateMessages.getMessage($messageKeyPrefix, "invalid.details") -->
-                                        Your email address or password is incorrect. Please try again
-                                    </small>
-					            </div>
-					            <!-- #end -->
-				            	<label for="email">
-                                    <!-- $templateMessages.getMessage($messageKeyPrefix, "usernameTitle") -->
-                                    Email address
-                                </label>
-				                <input type="email" name="$name" value=""
-								id="email" class=" email" required>			        
-								<!-- value="$username"  -->
-								        
-				            </div>
-				
-				            <div class="form-field">
-				            	<small id="error2"></small>
-				            	<label for="password">
-                                    <!-- $templateMessages.getMessage($messageKeyPrefix, "passwordTitle") -->
-                                    Password
-                                </label>
-				                <input type="password" name="$pass" id="password" required>
-				                
-				                <span><button type="button" id="iconBtn"><img src="assets/learning/img/visibility_off.svg"
-	                                            class="visibility-icon" alt="hide password"></button></span>
-				            </div>
-				
-				            <input type="hidden" name="$adapterIdField" id="$adapterIdField" value="$adapterId"/>
-				
-				            <!-- #if($supportsPasswordReset) -->
-				            <input type="hidden" name="$passwordReset" value=""/>
-				            <a class="forgot-pass" onclick="postForgotPassword();">
-                                <!-- $templateMessages.getMessage($messageKeyPrefix, "forgotPassword") -->
-                                Forgot your password?
-                            </a>
-				            <!-- #end -->
-			                
-			           		<button class="base-button" id="formButton" type="submit">
-                                <!-- $templateMessages.getMessage($messageKeyPrefix, "signin") -->
-                                Sign in
-                            </button>
-                            <hr />
-                            <p>Do you have access through your employer or university? </p>
-                            <button class="secondary-button base-button" id="formButton" type="submit">
-                                <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.org") -->
-                                Sign in with your organisation
-                            </button>
-                        </fieldset>
-                        
-                        <div id="formSubmissionErrorSecond">
-                            <!-- $templateMessages.getMessage($messageKeyPrefix, "contact.us") -->
-                        </div>
-                             
-			            <div id="accessValidation" class="visibility-hidden-form" role="alert">	</div>		            
-			        </form>
-			      </div>
-			  
-				  <div class="col-2">
-                    <h2 class="bp-login__header">Join the 1 million medical professionals on the UK’s leading medical learning platform </h2>
-			           <img src="assets/learning/img/medics.svg" alt="medics">
-			      </div>
-	    	  </div>
-    	  </div>	    
-	</main>
+  <body>
+    <main>
+      <div class="container">
+        <div class="col-1">
+          <section>
+            <img
+              src="assets/learning/img/logo.svg"
+              alt="BMJ Learning Logo"
+              class="learning-logo"
+            />
+            <p>
+              Don’t have an account?
+              <a href="https://new-learning.bmj.com/sign-up">Sign up</a>
+            </p>
+          </section>
+
+          <h1>
+            <!-- $templateMessages.getMessage($messageKeyPrefix, "title") -->
+            Log in
+          </h1>
+
+          <form action="$url" method="post" id="signIn">
+            <fieldset>
+              <div class="form-field">
+                <div id="error-account-details">
+                  <small class="error incorrect-account-details">
+                    <!-- $templateMessages.getMessage($messageKeyPrefix, "invalid.details") -->
+                    Your email address or password is incorrect. Please try
+                    again
+                  </small>
+                </div>
+                <!-- #end -->
+                <label for="email">
+                  <!-- $templateMessages.getMessage($messageKeyPrefix, "usernameTitle") -->
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  name="$name"
+                  value=""
+                  id="email"
+                  class="email"
+                  required
+                />
+                <small class="error-email" id="error1"
+                  >Please enter a valid email address</small
+                >
+                <!-- value="$username"  -->
+              </div>
+
+              <div class="form-field">
+                <label for="password">
+                  <!-- $templateMessages.getMessage($messageKeyPrefix, "passwordTitle") -->
+                  Password
+                </label>
+                <input type="password" name="$pass" id="password" required />
+
+                <span
+                  ><button type="button" id="iconBtn">
+                    <img
+                      src="assets/learning/img/visibility_off.svg"
+                      class="visibility-icon"
+                      alt="hide password"
+                    /></button
+                ></span>
+              </div>
+
+              <input
+                type="hidden"
+                name="$adapterIdField"
+                id="$adapterIdField"
+                value="$adapterId"
+              />
+
+              <!-- #if($supportsPasswordReset) -->
+              <input type="hidden" name="$passwordReset" value="" />
+              <a class="forgot-pass" onclick="postForgotPassword();">
+                <!-- $templateMessages.getMessage($messageKeyPrefix, "forgotPassword") -->
+                Forgot your password?
+              </a>
+              <!-- #end -->
+
+              <button class="base-button" id="formButton" type="submit">
+                <!-- $templateMessages.getMessage($messageKeyPrefix, "signin") -->
+                Sign in
+              </button>
+              <hr />
+              <p>Do you have access through your employer or university?</p>
+              <button
+                class="secondary-button base-button"
+                id="formButton"
+                type="submit"
+              >
+                <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.org") -->
+                Sign in with your organisation
+              </button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="col-2">
+          <h2>
+            Join the 1 million medical professionals on the UK’s leading medical
+            learning platform
+          </h2>
+          <img src="assets/learning/img/medics.svg" alt="medics" />
+        </div>
+      </div>
+    </main>
 
     <script src="assets/learning/js/login.js"></script>
-	<script>
-	    function postForgotPassword() {
-	        document.forms[0]['$passwordReset'].value = 'clicked';
-	        document.forms[0].submit();
-	    }
-	</script>
-
-</body>
+    <script>
+      function postForgotPassword() {
+        document.forms[0]['$passwordReset'].value = 'clicked';
+        document.forms[0].submit();
+      }
+    </script>
+  </body>
 </html>
