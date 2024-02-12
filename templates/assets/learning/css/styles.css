@@ -3,9 +3,6 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-body {
-  width: 100vw;
   font-family: interfaceregular, Arial, sans-serif;
 }
 main,
@@ -35,7 +32,6 @@ h2 {
     margin: 50px 20px 0 20px;
   }
 }
-
 a {
   color: #2a6ebb;
   text-decoration: none;
@@ -98,11 +94,19 @@ button#iconBtn {
     0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 /* CONTAINERS */
-
 .container {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* COLUMNS */
+.container .col-1 {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container .col-1 section {
   display: flex;
@@ -119,70 +123,58 @@ button#iconBtn {
     font-size: 16px;
   }
 }
-/* COLUMNS */
-.col-1 {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container .col-1 section p a {
+  margin: 0;
 }
+
+/* MOBILE STYLES */
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 24px;
     line-height: 36px;
   }
-  .col-1 {
+  .container .col-1 {
     width: auto;
     margin: 80px 20px 20px;
   }
-  .col-1 section {
+  .container .col-1 section {
     flex-direction: column;
     margin: 0;
   }
-  .col-1 sectionp {
-    margin: 0 0 30px 0;
-  }
-  .col-1 sectionp a {
-    margin: 0;
-  }
-  .col-1 sectionimg {
-    margin: 0 0 30px 0;
-  }
-  .col-1 .base-button {
+  .container .col-1 form .base-button {
     margin: 0 auto 20px;
     min-width: 100%;
     line-height: 21px;
   }
-  .col-1 fieldset > p {
+  .container .col-1 form fieldset > p {
     text-align: center;
   }
-  .col-2 {
+  .container .col-2 {
     width: auto;
     display: none;
   }
-  .login-form__intro {
-    margin: 1rem 0;
-  }
 }
+/* DESKTOP STYLES  */
 @media only screen and (min-width: 768px) {
-  .col-2 {
+  .container {
+    flex-direction: row;
+    column-gap: 50px;
+  }
+  .container .col-2 {
     display: flex;
     width: 40%;
   }
-  .col-1 {
+  .container .col-1 {
     margin: 0 0 0 50px;
   }
-  .col-1 section {
+  .container .col-1 section {
     margin: 40px 0 80px;
   }
-  .col-1 sectionp a {
-    margin: 0;
-  }
-  .col-1 sectionimg {
+  .container .col-1 section img {
     padding: 0 20px 0 0;
   }
 }
-.col-2 {
+.container .col-2 {
   overflow: hidden;
   background-color: #15375e;
   padding: 0 20px;
@@ -191,7 +183,7 @@ button#iconBtn {
   justify-content: space-between;
   align-items: center;
 }
-.col-2 img {
+.container .col-2 img {
   margin-top: 130px;
   max-width: 100%;
   height: auto;
@@ -208,7 +200,7 @@ label {
   font-weight: 500px;
   line-height: 21px;
 }
-.error {
+.generic-error {
   border: 1px solid #cb2331;
   padding: 15px;
   width: fit-content;
@@ -219,6 +211,7 @@ label {
   line-height: 24px;
   font-weight: 600;
   max-width: 391px;
+  display: none;
 }
 .error-email {
   color: #cb2331;
@@ -226,6 +219,9 @@ label {
   font-size: 16px;
   line-height: 24px;
   margin: 0 0 25px;
+  display: none;
+}
+.show {
   display: block;
 }
 .visibility-hidden-form {
@@ -240,25 +236,6 @@ label {
   white-space: nowrap !important;
   border: 0 !important;
 }
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-@media only screen and (min-width: 768px) {
-  .container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-column-gap: 50px;
-    column-gap: 50px;
-  }
-}
 form input {
   border: 1px solid #f2f2f2;
   border-radius: 3px;
@@ -271,11 +248,6 @@ form input {
   outline: none;
   color: #5f6163;
   font-size: 16px;
-}
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  form input {
-    width: 100%;
-  }
 }
 form input:focus {
   border: 2px solid #2a6ebb !important;
@@ -290,4 +262,9 @@ form span {
   position: relative;
   top: -57px;
   right: 10px;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  form input {
+    width: 100%;
+  }
 }

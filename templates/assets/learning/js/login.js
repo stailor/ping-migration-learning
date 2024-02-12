@@ -1,10 +1,10 @@
 var formFields = document.querySelectorAll('input');
 
-for (i = 0; i < formFields.length; i++) {
-  formFields[i].addEventListener('focus', function () {
-    this.previousElementSibling.classList.add('focus');
-  });
-}
+// for (i = 0; i < formFields.length; i++) {
+//   formFields[i].addEventListener('focus', function () {
+//     this.previousElementSibling.classList.add('focus');
+//   });
+// }
 
 for (i = 0; i < formFields.length; i++) {
   formFields[i].addEventListener('keyup', function () {
@@ -20,18 +20,15 @@ for (i = 0; i < formFields.length; i++) {
 var loginForm = document.querySelector('#signIn');
 var emailEl = document.querySelector('#email');
 var passwordEl = document.querySelector('#password');
-var errorIcon = document.getElementById('#error-icon');
+var emailInput = document.getElementById('email');
+var emailError = document.querySelector('.error-email');
+var genericError = document.querySelector('.generic-error');
 
 var validateEmail = function validateEmail() {
   var valid = false;
   var email = emailEl.value.trim();
-  if (!isRequired(email)) {
-    showError(
-      emailEl,
-      'Email cannot be blank. Please enter a valid email address'
-    );
-  } else if (!isEmailValid(email)) {
-    showError(emailEl, 'Please enter a valid email address');
+  if (!isRequired(email) || (!isEmailValid(email) && email.length > 0)) {
+    emailError.classList.add('show');
   } else {
     showSuccess(emailEl, '');
     valid = true;
@@ -82,13 +79,9 @@ var showError = function showError(input, message) {
     input.classList.add('error-input');
   }
 
-  const accessValidation = document.getElementById('accessValidation');
-
   const fragment = document.createDocumentFragment();
   const li = fragment.appendChild(document.createElement('li'));
   li.innerHTML = message;
-
-  accessValidation.appendChild(fragment);
 };
 
 var showSuccess = function showSuccess(input) {
@@ -103,13 +96,18 @@ var showSuccess = function showSuccess(input) {
 };
 
 if (loginForm) {
+  console.log('loginForm', emailError);
+
+  if (emailInput.value === '') {
+    emailError.classList.add('show'); // add 'show' class to error message
+    genericError.classList.add('show'); // add 'show' class to error message
+  } else if (emailInput.value !== '') {
+    emailError.classList.remove('show'); // remove 'show' class from error message
+    genericError.classList.remove('show'); // remove 'show' class to error message
+  }
+
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
-
-    var accessValidation = document.getElementById('accessValidation');
-    if (accessValidation.childNodes.length > 0) {
-      accessValidation.innerHTML = '';
-    }
 
     var isEmailValid = validateEmail(),
       isPasswordValid = validatePassword();
