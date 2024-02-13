@@ -1,21 +1,4 @@
 var formFields = document.querySelectorAll('input');
-
-// for (i = 0; i < formFields.length; i++) {
-//   formFields[i].addEventListener('focus', function () {
-//     this.previousElementSibling.classList.add('focus');
-//   });
-// }
-
-for (i = 0; i < formFields.length; i++) {
-  formFields[i].addEventListener('keyup', function () {
-    if (this.value.length >= 1) {
-      this.previousElementSibling.classList.add('focus');
-    } else {
-      this.previousElementSibling.classList.remove('focus');
-    }
-  });
-}
-
 // Form validation
 var loginForm = document.querySelector('#signIn');
 var emailEl = document.querySelector('#email');
@@ -27,8 +10,10 @@ var genericError = document.querySelector('.generic-error');
 var validateEmail = function validateEmail() {
   var valid = false;
   var email = emailEl.value.trim();
-  if (!isRequired(email) || (!isEmailValid(email) && email.length > 0)) {
-    emailError.classList.add('show');
+  if (!isRequired(email)) {
+    showError(emailEl, 'Email cannot be blank.');
+  } else if (!isEmailValid(email)) {
+    showError(emailEl, 'Email is not valid (incorrect format)');
   } else {
     showSuccess(emailEl, '');
     valid = true;
@@ -97,14 +82,6 @@ var showSuccess = function showSuccess(input) {
 
 if (loginForm) {
   console.log('loginForm', emailError);
-
-  if (emailInput.value === '') {
-    emailError.classList.add('show'); // add 'show' class to error message
-    genericError.classList.add('show'); // add 'show' class to error message
-  } else if (emailInput.value !== '') {
-    emailError.classList.remove('show'); // remove 'show' class from error message
-    genericError.classList.remove('show'); // remove 'show' class to error message
-  }
 
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
