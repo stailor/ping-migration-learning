@@ -86,9 +86,7 @@ var showSuccess = function showSuccess(input) {
 };
 
 if (loginForm) {
-  console.log('BEFORE PREVENT DEFAULT');
-  e.preventDefault();
-  console.log('AFTER PREVENT DEFAULT');
+  console.log('loginForm', emailError);
 
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
