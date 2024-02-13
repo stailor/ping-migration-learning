@@ -68,7 +68,7 @@ is not recommended as it may interfere with expected server behavior.
             Log in
           </h1>
 
-          <form action="$url" method="post" id="signIn">
+          <form id="signIn">
             <fieldset>
               <div class="form-field">
                 <small class="generic-error">
@@ -86,10 +86,10 @@ is not recommended as it may interfere with expected server behavior.
                     class="email"
                     required
                   />
-                  <small class="error-email"
-                    >Please enter a valid email address</small
-                  >
                 </label>
+                <div class="error-email"
+                >Please enter a valid email address</div
+              />
                 <!-- value="$username"  -->
               </div>
 

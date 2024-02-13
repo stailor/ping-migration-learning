@@ -1,21 +1,4 @@
 var formFields = document.querySelectorAll('input');
-
-// for (i = 0; i < formFields.length; i++) {
-//   formFields[i].addEventListener('focus', function () {
-//     this.previousElementSibling.classList.add('focus');
-//   });
-// }
-
-for (i = 0; i < formFields.length; i++) {
-  formFields[i].addEventListener('keyup', function () {
-    if (this.value.length >= 1) {
-      this.previousElementSibling.classList.add('focus');
-    } else {
-      this.previousElementSibling.classList.remove('focus');
-    }
-  });
-}
-
 // Form validation
 var loginForm = document.querySelector('#signIn');
 var emailEl = document.querySelector('#email');
@@ -96,7 +79,9 @@ var showSuccess = function showSuccess(input) {
 };
 
 if (loginForm) {
-  console.log('loginForm', emailError);
+  console.log('BEFORE PREVENT DEFAULT');
+  e.preventDefault();
+  console.log('AFTER PREVENT DEFAULT');
 
   if (emailInput.value === '') {
     emailError.classList.add('show'); // add 'show' class to error message
