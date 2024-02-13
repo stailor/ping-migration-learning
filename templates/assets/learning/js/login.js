@@ -11,7 +11,7 @@ var validateEmail = function validateEmail() {
   var valid = false;
   var email = emailEl.value.trim();
   if (!isRequired(email)) {
-    showError(emailEl, 'Email cannot be blank.');
+    showError(emailEl, 'Please enter a valid email address');
   } else if (!isEmailValid(email)) {
     showError(emailEl, 'Email is not valid (incorrect format)');
   } else {
@@ -52,7 +52,12 @@ var isRequired = function isRequired(value) {
 
 var showError = function showError(input, message) {
   var formField = input.parentElement;
+  var genericErrorMessaging =
+    'Your email address or password is incorrect. Please try again';
+  var genericError = document.querySelector('#genericError');
   formField.classList.add('error');
+  genericError.classList.add('generic-error');
+  genericError.textContent = genericErrorMessaging;
 
   var error = formField.querySelector('small');
   var input = formField.querySelector('input');
@@ -60,7 +65,7 @@ var showError = function showError(input, message) {
   error.textContent = message;
 
   if (formField.classList.contains('error')) {
-    error.classList.add('error-icon');
+    error.classList.add('error-email');
     input.classList.add('error-input');
   }
 
@@ -76,7 +81,7 @@ var showSuccess = function showSuccess(input) {
   var input = formField.querySelector('input');
 
   error.textContent = '';
-  error.classList.remove('error-icon');
+  error.classList.remove('error-email');
   input.classList.remove('error-input');
 };
 

@@ -197,7 +197,6 @@ fieldset {
 label {
   color: #5f6163;
   font-size: 16px;
-  font-weight: 500px;
   line-height: 21px;
 }
 .generic-error {
@@ -211,7 +210,6 @@ label {
   line-height: 24px;
   font-weight: 600;
   max-width: 391px;
-  display: none;
 }
 .error-email {
   color: #cb2331;
@@ -219,9 +217,6 @@ label {
   font-size: 16px;
   line-height: 24px;
   margin: 0 0 25px;
-  display: none;
-}
-.show {
   display: block;
 }
 .visibility-hidden-form {
@@ -255,6 +250,12 @@ form input:focus {
 form input:hover {
   -webkit-box-shadow: 0 2px 0 #cccdcd;
   box-shadow: 0 2px 0 #cccdcd;
+}
+form label.error > span {
+  top: -92px;
+}
+form input.error-input {
+  margin: 7px 0 10px 0;
 }
 form span {
   cursor: pointer;
