@@ -10,8 +10,10 @@ var genericError = document.querySelector('.generic-error');
 var validateEmail = function validateEmail() {
   var valid = false;
   var email = emailEl.value.trim();
-  if (!isRequired(email) || (!isEmailValid(email) && email.length > 0)) {
-    emailError.classList.add('show');
+  if (!isRequired(email)) {
+    showError(emailEl, 'Please enter a valid email address');
+  } else if (!isEmailValid(email)) {
+    showError(emailEl, 'Email is not valid (incorrect format)');
   } else {
     showSuccess(emailEl, '');
     valid = true;
@@ -50,7 +52,12 @@ var isRequired = function isRequired(value) {
 
 var showError = function showError(input, message) {
   var formField = input.parentElement;
+  var genericErrorMessaging =
+    'Your email address or password is incorrect. Please try again';
+  var genericError = document.querySelector('#genericError');
   formField.classList.add('error');
+  genericError.classList.add('generic-error');
+  genericError.textContent = genericErrorMessaging;
 
   var error = formField.querySelector('small');
   var input = formField.querySelector('input');
@@ -58,7 +65,7 @@ var showError = function showError(input, message) {
   error.textContent = message;
 
   if (formField.classList.contains('error')) {
-    error.classList.add('error-icon');
+    error.classList.add('error-email');
     input.classList.add('error-input');
   }
 
@@ -74,7 +81,7 @@ var showSuccess = function showSuccess(input) {
   var input = formField.querySelector('input');
 
   error.textContent = '';
-  error.classList.remove('error-icon');
+  error.classList.remove('error-email');
   input.classList.remove('error-input');
 };
 
@@ -82,14 +89,6 @@ if (loginForm) {
   console.log('BEFORE PREVENT DEFAULT');
   e.preventDefault();
   console.log('AFTER PREVENT DEFAULT');
-
-  if (emailInput.value === '') {
-    emailError.classList.add('show'); // add 'show' class to error message
-    genericError.classList.add('show'); // add 'show' class to error message
-  } else if (emailInput.value !== '') {
-    emailError.classList.remove('show'); // remove 'show' class from error message
-    genericError.classList.remove('show'); // remove 'show' class to error message
-  }
 
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();

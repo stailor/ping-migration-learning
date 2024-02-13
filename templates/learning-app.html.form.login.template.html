@@ -71,34 +71,26 @@ is not recommended as it may interfere with expected server behavior.
           <form id="signIn">
             <fieldset>
               <div class="form-field">
-                <small class="generic-error">
-                  <!-- $templateMessages.getMessage($messageKeyPrefix, "invalid.details") -->
-                  Your email address or password is incorrect. Please try again
-                </small>
-                <!-- #end -->
+                <div id="genericError"></div>
+              </div>
+
+              <!-- #end -->
+              <div class="form-field">
                 <label for="email">
                   <!-- $templateMessages.getMessage($messageKeyPrefix, "usernameTitle") -->
                   Email address
-                  <input
-                    name="$name"
-                    value=""
-                    id="email"
-                    class="email"
-                    required
-                  />
+                  <input name="$name" value="" id="email" class="email" />
+                  <small></small>
                 </label>
-                <div class="error-email"
-                >Please enter a valid email address</div
-              />
-                <!-- value="$username"  -->
               </div>
+              <!-- value="$username"  -->
 
               <div class="form-field">
                 <label for="password">
                   <!-- $templateMessages.getMessage($messageKeyPrefix, "passwordTitle") -->
                   Password
-
-                  <input type="password" name="$pass" id="password" required />
+                  <input type="password" name="$pass" id="password" />
+                  <small></small>
 
                   <span
                     ><button type="button" id="iconBtn">
@@ -128,7 +120,7 @@ is not recommended as it may interfere with expected server behavior.
 
               <button class="base-button" id="formButton" type="submit">
                 <!-- $templateMessages.getMessage($messageKeyPrefix, "signin") -->
-                Sign in
+                Log in
               </button>
               <hr />
               <p>Do you have access through your employer or university?</p>
@@ -138,7 +130,7 @@ is not recommended as it may interfere with expected server behavior.
                 type="submit"
               >
                 <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.org") -->
-                Sign in with your organisation
+                Log in with your organisation
               </button>
             </fieldset>
           </form>

@@ -128,7 +128,7 @@ button#iconBtn {
 }
 
 /* MOBILE STYLES */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 862px) {
   h1 {
     font-size: 24px;
     line-height: 36px;
@@ -155,7 +155,7 @@ button#iconBtn {
   }
 }
 /* DESKTOP STYLES  */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 862px) {
   .container {
     flex-direction: row;
     column-gap: 50px;
@@ -197,7 +197,6 @@ fieldset {
 label {
   color: #5f6163;
   font-size: 16px;
-  font-weight: 500px;
   line-height: 21px;
 }
 .generic-error {
@@ -211,7 +210,6 @@ label {
   line-height: 24px;
   font-weight: 600;
   max-width: 391px;
-  display: none;
 }
 .error-email {
   color: #cb2331;
@@ -219,9 +217,6 @@ label {
   font-size: 16px;
   line-height: 24px;
   margin: 0 0 25px;
-  display: none;
-}
-.show {
   display: block;
 }
 .visibility-hidden-form {
@@ -237,7 +232,7 @@ label {
   border: 0 !important;
 }
 form input {
-  border: 1px solid #f2f2f2;
+  border: 1px solid #cccdcd;
   border-radius: 3px;
   height: 44px;
   box-sizing: border-box;
@@ -255,6 +250,12 @@ form input:focus {
 form input:hover {
   -webkit-box-shadow: 0 2px 0 #cccdcd;
   box-shadow: 0 2px 0 #cccdcd;
+}
+form label.error > span {
+  top: -92px;
+}
+form input.error-input {
+  margin: 7px 0 10px 0;
 }
 form span {
   cursor: pointer;
