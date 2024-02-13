@@ -60,20 +60,41 @@ button#iconBtn {
   cursor: pointer;
 }
 .base-button {
-  background-color: #7e5ec4;
   border: none;
-  border-radius: 4px;
-  color: #fff;
+  border-radius: 3px;
   cursor: pointer;
-  display: block;
+  display: flex;
+  justify-content: center;
   font-size: 16px;
   min-width: 285px;
-  padding: 15px 20px;
   transition:
     background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0ms,
     box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0ms,
     border 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.base-button.purple {
+  background-color: #7e5ec4;
+  color: #fff;
+  padding: 15px 20px;
   margin: 0 auto 40px;
+}
+.base-button.white {
+  background-color: #fff;
+  color: #5f6163;
+  border: 1px solid #cccdcd;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  min-height: 48px;
+  margin: 0 auto 10px;
+}
+.base-button.white:hover {
+  background-color: #fff;
+  border-color: #7d5cc6;
+  color: #7d5cc6;
+}
+.base-button.white img {
+  margin: 0 10px 0 0;
 }
 .base-button:hover {
   background-color: #9378ce;
@@ -142,7 +163,6 @@ button#iconBtn {
     margin: 0;
   }
   .container .col-1 form .base-button {
-    margin: 0 auto 20px;
     min-width: 100%;
     line-height: 21px;
   }
@@ -257,7 +277,7 @@ form label.error > span {
 form input.error-input {
   margin: 7px 0 10px 0;
 }
-form span {
+form label > span {
   cursor: pointer;
   float: right;
   position: relative;
