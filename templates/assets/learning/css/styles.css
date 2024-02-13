@@ -128,7 +128,7 @@ button#iconBtn {
 }
 
 /* MOBILE STYLES */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 862px) {
   h1 {
     font-size: 24px;
     line-height: 36px;
@@ -155,7 +155,7 @@ button#iconBtn {
   }
 }
 /* DESKTOP STYLES  */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 862px) {
   .container {
     flex-direction: row;
     column-gap: 50px;
@@ -232,7 +232,7 @@ label {
   border: 0 !important;
 }
 form input {
-  border: 1px solid #f2f2f2;
+  border: 1px solid #cccdcd;
   border-radius: 3px;
   height: 44px;
   box-sizing: border-box;
