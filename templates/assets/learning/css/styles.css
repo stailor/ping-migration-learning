@@ -261,6 +261,9 @@ label {
 form {
   margin: 0 0 50px 0;
 }
+form a.base-button:hover {
+  text-decoration: none;
+}
 form input {
   border: 1px solid #cccdcd;
   border-radius: 3px;
