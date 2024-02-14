@@ -124,23 +124,32 @@ is not recommended as it may interfere with expected server behavior.
               </button>
               <hr />
               <p>Do you have access through your employer or university?</p>
-              <button class="base-button white" id="formButton" type="submit">
+              <a
+                class="base-button white"
+                href="https://new-learning.bmj.com/sign-up/institution"
+              >
                 <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.org") -->
-                Log in with your organisation
-              </button>
-              <button class="base-button white" id="formButton" type="submit">
+                Sign up with your organisation
+              </a>
+              <a
+                class="base-button white"
+                href="https://oidc.sso.bmj.com/login?idp=oac&login_redirect=learning "
+              >
                 <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.org") -->
                 <img
                   src="./assets/learning/img/openAthens.svg"
                   alt="Open Athens link"
                 />
-                in using OpenAthens
-              </button>
-              <button class="base-button white" id="formButton" type="submit">
+                Sign up using OpenAthens
+              </a>
+              <a
+                class="base-button white"
+                href="https://myaccount.bmj.com/myaccount/signup.html?trackEvent=registrationJourney&regService=learning-registration&fwdUrl=https://new-learning.bmj.com "
+              >
                 <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.org") -->
                 <img src="./assets/learning/img/bma.svg" alt="BMA link" />
-                Log in using BMA
-              </button>
+                Sign up using BMA
+              </a>
             </fieldset>
           </form>
         </div>

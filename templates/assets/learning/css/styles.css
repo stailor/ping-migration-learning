@@ -60,6 +60,7 @@ button#iconBtn {
   cursor: pointer;
 }
 .base-button {
+  box-sizing: border-box;
   border: none;
   border-radius: 3px;
   cursor: pointer;
