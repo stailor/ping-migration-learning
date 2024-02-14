@@ -42,12 +42,16 @@ a {
   font-size: 14px;
   line-height: 21px;
 }
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 hr {
   border: 1px solid #f2f2f2;
 }
 p {
   color: #5f6163;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 21px;
   margin: 20px 0;
   padding: 0;
@@ -129,6 +133,8 @@ button#iconBtn {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: auto;
+  padding: 0 50px 0 0;
 }
 .container .col-1 section {
   display: flex;
@@ -158,6 +164,7 @@ button#iconBtn {
   .container .col-1 {
     width: auto;
     margin: 80px 20px 20px;
+    padding: 0;
   }
   .container .col-1 section {
     flex-direction: column;
@@ -179,7 +186,6 @@ button#iconBtn {
 @media only screen and (min-width: 862px) {
   .container {
     flex-direction: row;
-    column-gap: 50px;
   }
   .container .col-2 {
     display: flex;
@@ -252,6 +258,9 @@ label {
   white-space: nowrap !important;
   border: 0 !important;
 }
+form {
+  margin: 0 0 50px 0;
+}
 form input {
   border: 1px solid #cccdcd;
   border-radius: 3px;
@@ -267,10 +276,6 @@ form input {
 }
 form input:focus {
   border: 2px solid #2a6ebb !important;
-}
-form input:hover {
-  -webkit-box-shadow: 0 2px 0 #cccdcd;
-  box-shadow: 0 2px 0 #cccdcd;
 }
 form label.error > span {
   top: -92px;
