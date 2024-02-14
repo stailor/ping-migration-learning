@@ -163,7 +163,7 @@ button#iconBtn {
   }
   .container .col-1 {
     width: auto;
-    margin: 80px 20px 20px;
+    margin: 50px 20px 20px;
     padding: 0;
   }
   .container .col-1 section {
@@ -195,7 +195,7 @@ button#iconBtn {
     margin: 0 0 0 50px;
   }
   .container .col-1 section {
-    margin: 40px 0 80px;
+    margin: 40px 0 50px;
   }
   .container .col-1 section img {
     padding: 0 20px 0 0;
