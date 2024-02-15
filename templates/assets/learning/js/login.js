@@ -86,8 +86,6 @@ var showSuccess = function showSuccess(input) {
 };
 
 if (loginForm) {
-  console.log('loginForm', emailError);
-
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
