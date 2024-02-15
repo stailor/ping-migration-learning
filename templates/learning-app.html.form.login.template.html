@@ -58,14 +58,19 @@ is not recommended as it may interfere with expected server behavior.
               class="learning-logo"
             />
             <p>
-              Don’t have an account?
-              <a href="https://new-learning.bmj.com/sign-up">Sign up</a>
+              $templateMessages.getMessage($messageKeyPrefix,
+              "signin.noaccount")
+              <!-- Don’t have an account? -->
+              <a href="https://new-learning.bmj.com/sign-up">
+                $templateMessages.getMessage($messageKeyPrefix, "signin.signup")
+                <!-- Sign up -->
+              </a>
             </p>
           </section>
 
           <h1>
-            <!-- $templateMessages.getMessage($messageKeyPrefix, "title") -->
-            Log in
+            $templateMessages.getMessage($messageKeyPrefix, "title")
+            <!-- Log in -->
           </h1>
 
           <form id="signIn">
@@ -77,8 +82,9 @@ is not recommended as it may interfere with expected server behavior.
               <!-- #end -->
               <div class="form-field">
                 <label for="email">
-                  <!-- $templateMessages.getMessage($messageKeyPrefix, "usernameTitle") -->
-                  Email address
+                  $templateMessages.getMessage($messageKeyPrefix,
+                  "usernameTitle")
+                  <!-- Email address -->
                   <input name="$name" value="" id="email" class="email" />
                   <small></small>
                 </label>
@@ -87,8 +93,9 @@ is not recommended as it may interfere with expected server behavior.
 
               <div class="form-field">
                 <label for="password">
-                  <!-- $templateMessages.getMessage($messageKeyPrefix, "passwordTitle") -->
-                  Password
+                  $templateMessages.getMessage($messageKeyPrefix,
+                  "passwordTitle")
+                  <!-- Password -->
                   <input type="password" name="$pass" id="password" />
                   <small></small>
 
@@ -117,23 +124,27 @@ is not recommended as it may interfere with expected server behavior.
                 onclick="postForgotPassword();"
                 href="https://myaccount.bmj.com/myaccount/email-password.html?trackEvent=emailPassword&fwdUrl=https%3A%2F%2Fnew-learning.bmj.com%2F&locale=en_GB"
               >
-                <!-- $templateMessages.getMessage($messageKeyPrefix, "forgotPassword") -->
-                Forgot your password?
+                $templateMessages.getMessage($messageKeyPrefix,
+                "forgotPassword")
+                <!-- Forgot your password? -->
               </a>
               <!-- #end -->
 
               <button class="base-button purple" id="formButton" type="submit">
-                <!-- $templateMessages.getMessage($messageKeyPrefix, "signin") -->
-                Log in
+                $templateMessages.getMessage($messageKeyPrefix, "signin")
+                <!-- Log in -->
               </button>
               <hr />
-              <p>Do you have access through your employer or university?</p>
+              <p>
+                $templateMessages.getMessage($messageKeyPrefix, "signin.para")
+                <!-- Do you have access through your employer or university? -->
+              </p>
               <a
                 class="base-button white"
                 href="https://new-learning.bmj.com/sign-up/institution"
               >
-                <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.org") -->
-                Sign up with your organisation
+                $templateMessages.getMessage($messageKeyPrefix, "signin.org")
+                <!-- Sign up with your organisation -->
               </a>
               <a
                 class="base-button white"
@@ -143,16 +154,17 @@ is not recommended as it may interfere with expected server behavior.
                   src="./assets/learning/img/openAthens.svg"
                   alt="Open Athens link"
                 />
-                <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.openathens") -->
-                Sign up using OpenAthens
+                $templateMessages.getMessage($messageKeyPrefix,
+                "signin.openathens")
+                <!-- Sign up using OpenAthens -->
               </a>
               <a
                 class="base-button white"
                 href="https://myaccount.bmj.com/myaccount/signup.html?trackEvent=registrationJourney&regService=learning-registration&fwdUrl=https://new-learning.bmj.com "
               >
                 <img src="./assets/learning/img/bma.svg" alt="BMA link" />
-                <!-- $templateMessages.getMessage($messageKeyPrefix, "signin.bma") -->
-                Sign up using BMA
+                $templateMessages.getMessage($messageKeyPrefix, "signin.bma")
+                <!-- Sign up using BMA -->
               </a>
             </fieldset>
           </form>
@@ -160,9 +172,8 @@ is not recommended as it may interfere with expected server behavior.
 
         <div class="col-2">
           <h2>
-            <!-- $templateMessages.getMessage($messageKeyPrefix, "strapline") -->
-            Join the 1 million medical professionals on the UK’s leading medical
-            learning platform
+            $templateMessages.getMessage($messageKeyPrefix, "strapline")
+            <!-- Join the 1 million medical professionals on the UK’s leading medical learning platform -->
           </h2>
           <img src="assets/learning/img/medics.svg" alt="medics" />
         </div>
